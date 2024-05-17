@@ -16,4 +16,5 @@ pipeline{
             "http://ec2-34-207-155-150.compute-1.amazonaws.com:8081/artifactory/geolocation/geo/bio_${BUILD_ID}.jar"'
     }
    }
+   }
 }
