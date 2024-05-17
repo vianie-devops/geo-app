@@ -6,9 +6,11 @@ pipeline{
    stages{
     stage ('sonar-scan'){
       steps{  
-        withsonarQubeEnv('sonarQube'){
-         sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=vianie-devops_geo-app'
-        }
+       // Ensure that the SonarQube environment is correctly referenced
+                withSonarQubeEnv('sonarQube'){
+                    // Run the SonarQube scanner
+                    sh 'mvn sonar:sonar'
+                }
             
     }
         
