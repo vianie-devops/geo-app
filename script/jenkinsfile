@@ -5,10 +5,10 @@ pipeline{
    }
    stages{
     stage{
-        steps{  
-           sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=vianie-devops_geo-app'
-                 
+      steps{  
+           sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=vianie-devops_geo-app'  
     }
+        
     }
     stage("maven1"){
         steps{ 
