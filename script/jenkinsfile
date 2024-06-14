@@ -41,16 +41,15 @@ pipeline{
     }
     stage('Image tagging'){
         steps{
-          sh 'docker tag utc-app-dev:v2.0 \
-          756783154910.dkr.ecr.us-east-1.amazonaws.com/utc-app-dev:v2.0'
-          sh 'docker tag utc-app-dev:v2.0 \
-          756783154910.dkr.ecr.us-east-1.amazonaws.com/utc-app-dev:v.$BUILD_ID'
-
+          sh 'docker tag utc-app-dev:latest \
+          756783154910.dkr.ecr.us-east-1.amazonaws.com/utc-app-dev:latest'
+          sh 'docker tag utc-app-dev:latest \
+          756783154910.dkr.ecr.us-east-1.amazonaws.com/utc-app-dev:latest'
         }
     }    
     stage('push image'){
       steps{
-        sh 'docker push 756783154910.dkr.ecr.us-east-1.amazonaws.com/utc-app-dev:v2.0'
+        sh 'docker push 756783154910.dkr.ecr.us-east-1.amazonaws.com/utc-app-dev:latest'
         sh 'docker push 756783154910.dkr.ecr.us-east-1.amazonaws.com/utc-app-dev:v.$BUILD_ID'
       }
     }
